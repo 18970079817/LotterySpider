@@ -21,15 +21,16 @@ else:
     r_a.encoding = 'utf-8'
     t_a = r_a.text
     soup_a = BeautifulSoup(t_a, 'lxml')
-    for tr in soup_a.find_all('tr'):
+    for tr_a in soup_a.find_all('tr_a'):
         i = 1
-        for td in tr.find_all('td'):
-            print td.string
+        for td in tr_a.find_all('td'):
             if i % 20 == 0:#Every 20 attribute a new line.
                 str_a = str(td.string) + '\n'
+                print str_a
                 i += 1
             else:
                 str_a = str(td.string) + '\t'
+                print str_a
                 i += 1
             with open('lottery.txt', 'a') as f:#Write into file.
                 f.write(str_a)
