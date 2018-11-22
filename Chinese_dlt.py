@@ -32,5 +32,5 @@ else:
                 str_a = str(td.string) + '\t'
                 print str_a
                 i += 1
-            with open('Chinese_dlt.txt', 'w') as f:#Write into file.
+            with open('Chinese_dlt.txt', 'a') as f:#Write into file.
                 f.write(str_a)
